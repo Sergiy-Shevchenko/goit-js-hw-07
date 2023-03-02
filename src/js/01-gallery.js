@@ -33,19 +33,18 @@ function onClick (event) {
   }
   console.log(event.target.nodeName);
 
-  // const smollImgEl = event.target;
-  // const imgKard = smollImgEl.closest('gallery__link');
-  // imgKard = classList.add('')
+  
+const instance = basicLightbox.create(`
+    <img src="${event.target.dataset.source}" width="800" height="600">
+` );
+//event.stopPropagation();
+instance.show()
+//instance.show(() => console.log('lightbox now visible'));
+//instance.close(() => console.log('lightbox not visible anymore'));
 }
 
 
-import * as basicLightbox from 'basiclightbox'
 
-const instance = basicLightbox.create(`
-    <img src="${preview}" width="800" height="600">
-`);
-
-instance.show()
 
 
 
