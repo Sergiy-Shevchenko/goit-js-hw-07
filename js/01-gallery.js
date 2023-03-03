@@ -32,12 +32,13 @@ function onClick (event) {
     return;
   }
   console.log(event.target.nodeName);
-
+  event.preventDefault();
   
 const instance = basicLightbox.create(`
     <img src="${event.target.dataset.source}" width="800" height="600">
 ` );
-//event.stopPropagation();
+
+
 instance.show()
 //instance.show(() => console.log('lightbox now visible'));
 //instance.close(() => console.log('lightbox not visible anymore'));

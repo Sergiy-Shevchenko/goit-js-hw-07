@@ -13,7 +13,7 @@ function creatItemsMarkup () {
          <img
            class="gallery__image"
            src="${preview}"
-           data-source="${original}"
+           
            alt="${description}"
          />
        </a>`;
@@ -22,15 +22,16 @@ function creatItemsMarkup () {
     };
     
     creatItemsMarkup ();
+    
+    ulEl.addEventListener('click', onClick);
+    
     function onClick (event) {
         if(event.target.nodeName !== 'IMG') {
           return;
         }
         console.log(event.target.nodeName);
-      
-        
-    //   const instance = basicLightbox.create(`
-    //       <img src="${event.target.dataset.source}" width="800" height="600">
-    //   ` );
-    //   //event.stopPropagation();
+        event.preventDefault();
+
+        let lightbox = new SimpleLightbox('.gallery a', { captionDelay:"${description}" });
+
     };
