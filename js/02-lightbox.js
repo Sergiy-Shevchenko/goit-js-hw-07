@@ -14,7 +14,8 @@ function creatItemsMarkup () {
            class="gallery__image"
            src="${preview}"
            
-           alt="${description}"
+           alt=""
+           title="${description}"
          />
        </a>`;
     }).join('');
@@ -32,6 +33,6 @@ function creatItemsMarkup () {
         console.log(event.target.nodeName);
         event.preventDefault();
 
-        let lightbox = new SimpleLightbox('.gallery a', { captionDelay:"${description}" });
-
+        let lightbox = new SimpleLightbox('.gallery a', { captionDelay:250, scrollZoom:false });
+        console.log(lightbox.event.target);
     };
