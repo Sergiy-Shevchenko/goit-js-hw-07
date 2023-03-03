@@ -34,5 +34,5 @@ function creatItemsMarkup () {
         event.preventDefault();
 
         let lightbox = new SimpleLightbox('.gallery a', { captionDelay:250, scrollZoom:false });
-        console.log(lightbox.event.target);
+        
     };
